@@ -1,11 +1,17 @@
 {
   "version": "5",
   "specifiers": {
-    "jsr:@luca/flag@^1.0.1": "1.0.1"
+    "jsr:@luca/flag@^1.0.1": "1.0.1",
+    "npm:@imagemagick/magick-wasm@0.0.31": "0.0.31"
   },
   "jsr": {
     "@luca/flag@1.0.1": {
       "integrity": "dce7eb4159b1bdb1606fe05c2e5388dcff5ae3b0b84184b934bc623143742408"
+    }
+  },
+  "npm": {
+    "@imagemagick/magick-wasm@0.0.31": {
+      "integrity": "sha512-QNivAUxSaItuiY8ziI/vRy6TtoecD7TOsD1LGZCG3wv8lfbdGbIj2QiJk0FlGkGwAVR966NlD3mkxPNvQrvq0w=="
     }
   },
   "remote": {
@@ -62,7 +68,8 @@
     "https://deno.land/x/imagemagick_deno@0.0.14/src/settings/native-magick-settings.ts": "859787363161a2c6a693ab5b475859f9e9b02dfb7128215b0c03a68839892d1c",
     "https://deno.land/x/imagemagick_deno@0.0.14/src/virtual-pixel-method.ts": "ae2f0520e05b382299e4d41f4d7e2c67baf727ef7c816037e601c978948b1451",
     "https://deno.land/x/imagemagick_deno@0.0.14/src/wasm/magick.ts": "b5ec7d6c3c7379f8f9ba0c23238f7024aa35f3a15edb2d1cbca4ccc44a186ac9",
-    "https://deno.land/x/imagemagick_deno@0.0.14/src/wasm/magick_native.js": "e7f2cfe41531d94286bf839783c08cc0b4b9c89e6ad7bbd0e2a4dcf70086ca75"
+    "https://deno.land/x/imagemagick_deno@0.0.14/src/wasm/magick_native.js": "e7f2cfe41531d94286bf839783c08cc0b4b9c89e6ad7bbd0e2a4dcf70086ca75",
+    "https://deno.land/x/imagemagick_deno@0.0.31/mod.ts": "124d7f045429f6e6c486b86e72d025410d09576bc0d8075e69f97118a1a33413"
   },
   "workspace": {
     "dependencies": [

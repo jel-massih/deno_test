@@ -3,9 +3,9 @@ import { getTestTodo } from "./todos.ts";
 
 import {
     ImageMagick,
-    initializeImageMagick,
+    initialize,
     MagickGeometry,
-  } from "https://deno.land/x/imagemagick_deno@0.0.14/mod.ts";
+  } from "https://deno.land/x/imagemagick_deno@0.0.31/mod.ts";
   import { getRemoteImage } from "./image.ts";
 
 
@@ -18,7 +18,7 @@ export async function getRandomTodo() {
 }
 
 export async function resizeImage(imageUrl: string) {
-    await initializeImageMagick();
+    await initialize();
     const image = await getRemoteImage(imageUrl);
     if(!image) {
         throw new Error(`Failed to fetch image: ${imageUrl}`);
