@@ -18,6 +18,7 @@ export async function getRandomTodo() {
 }
 
 export async function resizeImage(imageUrl: string) {
+    imageUrl = imageUrl || 'https://placehold.co/600x400?text=Hello+World'
     await initialize();
     const image = await getRemoteImage(imageUrl);
     if(!image) {
