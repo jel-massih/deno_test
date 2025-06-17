@@ -1,0 +1,5 @@
+{
+  "imports": {
+    "@luca/flag": "jsr:@luca/flag@^1.0.1"
+  }
+}

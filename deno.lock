@@ -1,0 +1,16 @@
+{
+  "version": "5",
+  "specifiers": {
+    "jsr:@luca/flag@^1.0.1": "1.0.1"
+  },
+  "jsr": {
+    "@luca/flag@1.0.1": {
+      "integrity": "dce7eb4159b1bdb1606fe05c2e5388dcff5ae3b0b84184b934bc623143742408"
+    }
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@luca/flag@^1.0.1"
+    ]
+  }
+}
