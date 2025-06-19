@@ -1,3 +1,5 @@
+export const VERSION = '1.0.0';
+
 import { lib_getCurrentTime } from "./utils/time.ts";
 import { getTestTodo } from "./todos.ts";
 
