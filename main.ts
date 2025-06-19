@@ -1,3 +1,5 @@
+export const VERSION = '1.0.0';
+
 import { lib_getCurrentTime } from "./utils/time.ts";
 import { getTestTodo } from "./todos.ts";
 
@@ -28,7 +30,7 @@ export function multiply(...args: number[]) {
 }
 
 export async function blurImage(imageUrl: string) {
-    imageUrl = imageUrl || 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msKSl'
+    imageUrl = imageUrl || 'https://placehold.co/600x400.jpg?text=Hello+World'
     await initialize();
     const image = await getRemoteImage(imageUrl);
     if(!image) {
@@ -37,7 +39,7 @@ export async function blurImage(imageUrl: string) {
     if(typeof image === "string") {
         throw new Error(`Failed to fetch image: ${imageUrl}`);
     }
-    const resizedImage = new Promise((resolve) => {
+    const resizedImage = new Promise<Uint8Array>((resolve) => {
         ImageMagick.read(image.buffer, async (img: IMagickImage) => {
         const width = img.width;
         const height = img.height;
@@ -54,5 +56,9 @@ export async function blurImage(imageUrl: string) {
         );
       });
     });
-    return resizedImage
+
+    //Return base64 of the resized image
+    const base64 = btoa(String.fromCharCode(...await resizedImage));
+    return `data:${image.mediaType};base64,${base64}`;
+
 }
