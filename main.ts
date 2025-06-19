@@ -28,7 +28,7 @@ export function multiply(...args: number[]) {
 }
 
 export async function blurImage(imageUrl: string) {
-    imageUrl = imageUrl || 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msKSl'
+    imageUrl = imageUrl || 'https://internal.overworld.xyz/_next/static/media/sup-wordmark.413e5d54.webp'
     await initialize();
     const image = await getRemoteImage(imageUrl);
     if(!image) {
@@ -37,7 +37,7 @@ export async function blurImage(imageUrl: string) {
     if(typeof image === "string") {
         throw new Error(`Failed to fetch image: ${imageUrl}`);
     }
-    const resizedImage = new Promise((resolve) => {
+    const resizedImage = new Promise<Uint8Array>((resolve) => {
         ImageMagick.read(image.buffer, async (img: IMagickImage) => {
         const width = img.width;
         const height = img.height;
@@ -54,5 +54,5 @@ export async function blurImage(imageUrl: string) {
         );
       });
     });
-    return resizedImage
+    return Array.from(await resizedImage)
 }
