@@ -54,5 +54,9 @@ export async function blurImage(imageUrl: string) {
         );
       });
     });
-    return Array.from(await resizedImage)
+
+    //Return base64 of the resized image
+    const base64 = btoa(String.fromCharCode(...await resizedImage));
+    return `data:${image.mediaType};base64,${base64}`;
+
 }
