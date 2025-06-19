@@ -23,7 +23,9 @@ export async function sum(...args: number[]) {
     return args.reduce((acc, curr) => acc + curr, 0);
 }
 
-
+export function multiply(...args: number[]) {
+    return args.reduce((acc, curr) => acc * curr, 1);
+}
 
 export async function blurImage(imageUrl: string) {
     imageUrl = imageUrl || 'https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msKSl'
