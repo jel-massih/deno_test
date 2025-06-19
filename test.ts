@@ -1,7 +1,15 @@
-import { getCurrentTime, getRandomTodo, resizeImage } from "./main.ts";
+import { getCurrentTime, getRandomTodo, blurImage } from "./main.ts";
 
 console.log(await getCurrentTime());
 
 console.log(await getRandomTodo());
 
-console.log(await resizeImage("https://user-uploads.cdn.overworld.xyz/qu5ulfkpjrqdkjyu6hqww42w.png"));
+
+const imageResp = await blurImage("https://img-s-msn-com.akamaized.net/tenant/amp/entityid/BB1msKSl");
+Deno.writeFile("image-blur.jpg", imageResp as any);
+
+
+
+
+
+
