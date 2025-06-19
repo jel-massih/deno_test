@@ -30,7 +30,7 @@ export function multiply(...args: number[]) {
 }
 
 export async function blurImage(imageUrl: string) {
-    imageUrl = imageUrl || 'https://internal.overworld.xyz/_next/static/media/sup-wordmark.413e5d54.webp'
+    imageUrl = imageUrl || 'https://placehold.co/600x400.jpg?text=Hello+World'
     await initialize();
     const image = await getRemoteImage(imageUrl);
     if(!image) {
